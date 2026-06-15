@@ -1,4 +1,4 @@
-# Parth Dixit - Enterprise AI Portfolio
+# Portfolio
 
 Welcome to the source code for my personal portfolio! This project is designed as an interactive, high-performance web experience tailored to showcase my work in Artificial Intelligence, Machine Learning, and Data Science.
 
