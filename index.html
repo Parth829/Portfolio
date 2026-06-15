@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PARTH | Enterprise AI Research Platform</title>
+
+    <!-- Fonts: Syne, DM Mono (Google Fonts), Cabinet Grotesk (Fontshare) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+
+    <!-- Background Layers -->
+    <div class="bg-layers">
+        <div class="bg-circuit"></div>
+        <canvas id="matrix-canvas"></canvas>
+        <div id="three-bg"></div>
+        <div class="bg-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+        </div>
+    </div>
+
+    <!-- Loading Screen: Terminal AI Boot Sequence -->
+    <div id="loader">
+        <div class="boot-sequence">
+            <p class="sys-text">INITIALIZING AI SYSTEM...</p>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="loading-steps">
+                <p class="step" data-delay="200">> LOADING DATASETS...</p>
+                <p class="step" data-delay="700">> LOADING MACHINE LEARNING MODELS...</p>
+                <p class="step" data-delay="1200">> LOADING ANALYTICS ENGINE...</p>
+                <p class="step" data-delay="1700">> LOADING NEURAL NETWORKS...</p>
+                <p class="step final-step" data-delay="2200">> SYSTEM READY.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">[ parth / data-science · ai-engineer ]</a>
+            <ul class="nav-links">
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#skills">SKILLS</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#projects">PROJECTS</a></li>
+                <li><a href="#certifications">CERTIFICATIONS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="glitch" data-text="PARTH">PARTH</h1>
+                    <div class="role-badges">
+                        <span class="badge">AI Engineer</span>
+                        <span class="badge">Data Scientist</span>
+                        <span class="badge">Machine Learning Developer</span>
+                    </div>
+
+                    <div class="hero-typed">
+                        <span id="typed-text"></span>
+                    </div>
+
+                    <p class="hero-tagline">
+                        Computer Science undergraduate specializing in Artificial Intelligence, Machine Learning, Data
+                        Science, Predictive Analytics, and Intelligent Systems.<br><br>
+                        Passionate about transforming raw data into actionable insights through intelligent automation
+                        and machine learning.
+                    </p>
+
+                    <div class="cta-group">
+                        <a href="#projects" class="btn btn-primary">[ VIEW PROJECTS ]</a>
+                        <a href="#contact" class="btn btn-secondary">[ CONTACT ME ]</a>
+                        <a href="https://drive.google.com/file/d/1GJv-90UT-7rj08BYQ8LDGDd2xEi6b2Ed/view?usp=sharing"
+                            class="btn btn-secondary">[ DOWNLOAD RESUME ]</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="h-stat">
+                            <div class="counter-wrapper"><span class="counter" data-target="150">0</span><span
+                                    class="suffix">+</span></div>
+                            <span class="h-label">DSA Problems</span>
+                        </div>
+                        <div class="h-stat">
+                            <div class="counter-wrapper"><span class="counter" data-target="3">0</span></div>
+                            <span class="h-label">AI/ML Projects</span>
+                        </div>
+                        <div class="h-stat">
+                            <div class="counter-wrapper"><span class="counter" data-target="3">0</span><span
+                                    class="suffix">+</span></div>
+                            <span class="h-label">Certifications</span>
+                        </div>
+                        <div class="h-stat">
+                            <div class="counter-wrapper"><span class="counter" data-target="200">0</span><span
+                                    class="suffix">+</span></div>
+                            <span class="h-label">Students Impacted</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-architecture">
+                        <!-- Interactive SVG Diagram -->
+                        <div class="branched-arch">
+                            <svg viewBox="0 0 500 500" class="ai-architecture-svg">
+                                <defs>
+                                    <filter id="glow-cyan" x="-20%" y="-20%" width="140%" height="140%">
+                                        <feGaussianBlur stdDeviation="5" result="blur" />
+                                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                    </filter>
+                                    <filter id="glow-purple" x="-20%" y="-20%" width="140%" height="140%">
+                                        <linearGradient id="line-grad-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#00c8ff" />
+                                            <stop offset="100%" stop-color="#06ffa5" />
+                                        </linearGradient>
+                                        <linearGradient id="line-grad-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#ffbd2e" />
+                                            <stop offset="100%" stop-color="#06ffa5" />
+                                        </linearGradient>
+                                        <linearGradient id="line-grad-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#06ffa5" />
+                                            <stop offset="100%" stop-color="#7c3aed" />
+                                        </linearGradient>
+                                        <linearGradient id="line-grad-orange" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" stop-color="#06ffa5" />
+                                            <stop offset="100%" stop-color="#ff5f56" />
+                                        </linearGradient>
+                                </defs>
+
+                                <!-- Paths -->
+                                <path id="path-tl" d="M 175 90 L 250 90 L 250 210" stroke="rgba(0, 200, 255, 0.6)"
+                                    stroke-width="2" stroke-dasharray="6,6" fill="none" class="arch-line" />
+                                <path id="path-tr" d="M 325 90 L 250 90 L 250 210" stroke="rgba(255, 189, 46, 0.6)"
+                                    stroke-width="2" stroke-dasharray="6,6" fill="none" class="arch-line" />
+                                <path id="path-bl" d="M 250 290 L 250 340 L 100 340 L 100 380"
+                                    stroke="rgba(124, 58, 237, 0.6)" stroke-width="2" stroke-dasharray="6,6" fill="none"
+                                    class="arch-line" />
+                                <path id="path-br" d="M 250 290 L 250 340 L 400 340 L 400 380"
+                                    stroke="rgba(255, 95, 86, 0.6)" stroke-width="2" stroke-dasharray="6,6" fill="none"
+                                    class="arch-line" />
+
+                                <!-- Animated dots on paths -->
+                                <circle r="4" fill="#00c8ff">
+                                    <animateMotion dur="2s" repeatCount="indefinite">
+                                        <mpath href="#path-tl" />
+                                    </animateMotion>
+                                </circle>
+                                <circle r="4" fill="#ffbd2e">
+                                    <animateMotion dur="2s" repeatCount="indefinite" begin="1s">
+                                        <mpath href="#path-tr" />
+                                    </animateMotion>
+                                </circle>
+                                <circle r="4" fill="#7c3aed">
+                                    <animateMotion dur="2s" repeatCount="indefinite">
+                                        <mpath href="#path-bl" />
+                                    </animateMotion>
+                                </circle>
+                                <circle r="4" fill="#ff5f56">
+                                    <animateMotion dur="2s" repeatCount="indefinite" begin="1s">
+                                        <mpath href="#path-br" />
+                                    </animateMotion>
+                                </circle>
+                            </svg>
+
+                            <!-- Nodes -->
+                            <div class="branched-nodes">
+                                <!-- Top Left -->
+                                <div class="b-node n-cyan" style="left: 25px; top: 50px;">
+                                    <h4 class="t-cyan">DATA SOURCE</h4>
+                                    <p>CSV / APIs / Sensor Data</p>
+                                </div>
+                                <!-- Top Right -->
+                                <div class="b-node n-yellow" style="left: 325px; top: 50px;">
+                                    <h4 class="t-yellow">INGESTION</h4>
+                                    <p>Pandas / NumPy</p>
+                                </div>
+                                <!-- Center -->
+                                <div class="b-node n-green center-node" style="left: 175px; top: 210px;">
+                                    <h4 class="t-green">PROCESSING</h4>
+                                    <p>EDA / Plotly / Visualization</p>
+                                </div>
+                                <!-- Bottom Left -->
+                                <div class="b-node n-purple" style="left: 25px; top: 380px;">
+                                    <h4 class="t-purple">ML MODELS</h4>
+                                    <p>Scikit-Learn / TF / CNN-GRU</p>
+                                </div>
+                                <!-- Bottom Right -->
+                                <div class="b-node n-orange" style="left: 325px; top: 380px;">
+                                    <h4 class="t-orange">INSIGHTS</h4>
+                                    <p>Forecasting / LLM Reports</p>
+                                </div>
+                            </div>
+
+                            <div class="arch-label">PIPELINE ARCHITECTURE</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">01 — ABOUT</h2>
+                <p class="section-subtitle">Who I Am</p>
+
+                <div class="about-grid">
+                    <div class="about-text dash-card">
+                        <p>I'm a Computer Science undergraduate at Bennett University specializing in Artificial
+                            Intelligence, Machine Learning, Data Science, and Predictive Analytics.</p>
+                        <p>I enjoy building intelligent systems that bridge the gap between raw data and actionable
+                            business insights.</p>
+                        <p>My experience spans:</p>
+                        <ul class="domain-list">
+                            <li>Machine Learning</li>
+                            <li>Deep Learning</li>
+                            <li>Predictive Analytics</li>
+                            <li>Time Series Forecasting</li>
+                            <li>Data Visualization</li>
+                            <li>Generative AI</li>
+                            <li>Intelligent Dashboards</li>
+                        </ul>
+                        <p>Beyond technical work, I have led student-industry engagement initiatives impacting 200+
+                            students through Dean Career Clouds and outreach programs.</p>
+                    </div>
+
+                    <div class="about-timelines">
+                        <div class="timeline-card dash-card">
+                            <span class="tl-date">AUG 2023 – PRESENT</span>
+                            <h3>B.Tech Computer Science</h3>
+                            <p>Bennett University</p>
+                            <p class="tl-cgpa">CGPA: 8.15</p>
+                        </div>
+                        <div class="timeline-card dash-card">
+                            <span class="tl-date">FEB 2026 – MAY 2026</span>
+                            <h3>Co-Head, Corporate & Alumni Relations</h3>
+                            <p>Dean Career Clouds</p>
+                        </div>
+                        <div class="timeline-card dash-card">
+                            <span class="tl-date">AUG 2023 – AUG 2025</span>
+                            <h3>Co-Head, PR & Outreach</h3>
+                            <p>Indian Blockchain Fraternity</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS SECTION -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title">02 — SKILLS</h2>
+                <p class="section-subtitle">Technical Expertise</p>
+
+                <div class="skills-grid">
+                    <div class="skill-card dash-card">
+                        <h3>📊 Data Science</h3>
+                        <p class="skill-list">Python • Pandas • NumPy • Matplotlib • Plotly • Scikit-Learn</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>92%</span></div>
+                            <div class="skill-bar">
+                                <div class="fill" data-width="92%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card dash-card">
+                        <h3>🤖 Machine Learning</h3>
+                        <p class="skill-list">Regression • Classification • Clustering • Feature Engineering • Model
+                            Evaluation</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>88%</span></div>
+                            <div class="skill-bar">
+                                <div class="fill" data-width="88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card dash-card">
+                        <h3>🧠 Deep Learning</h3>
+                        <p class="skill-list">TensorFlow • Keras • CNN • GRU • Neural Networks</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>85%</span></div>
+                            <div class="skill-bar">
+                                <div class="fill" data-width="85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card dash-card">
+                        <h3>✨ Generative AI</h3>
+                        <p class="skill-list">LangChain • Gemini • Prompt Engineering • RAG Fundamentals</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>82%</span></div>
+                            <div class="skill-bar">
+                                <div class="fill" data-width="82%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-card dash-card">
+                        <h3>⚙ Development & Analytics</h3>
+                        <p class="skill-list">Streamlit • Power BI • Git • GitHub • MySQL</p>
+                        <div class="skill-bar-container">
+                            <div class="skill-info"><span>Proficiency</span><span>87%</span></div>
+                            <div class="skill-bar">
+                                <div class="fill" data-width="87%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERIENCE SECTION -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title">03 — EXPERIENCE</h2>
+                <p class="section-subtitle">Where I've Delivered</p>
+
+                <div class="leadership-timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content dash-card">
+                            <h3>Dean Career Clouds – SCSET</h3>
+                            <p class="role-title">Co-Head, Corporate & Alumni Relations</p>
+                            <div class="impact-section">
+                                <ul class="impact-list">
+                                    <li>Expanded career exposure for 200+ students</li>
+                                    <li>Managed mentorship initiatives</li>
+                                    <li>Strengthened academia-industry collaboration</li>
+                                    <li>Managed corporate outreach partnerships</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content dash-card">
+                            <h3>Indian Blockchain Fraternity</h3>
+                            <p class="role-title">Co-Head, PR & Outreach</p>
+                            <div class="impact-section">
+                                <ul class="impact-list">
+                                    <li>Organized 5+ technical events</li>
+                                    <li>Led a 6-member outreach team</li>
+                                    <li>Increased community engagement by 40%</li>
+                                    <li>Managed sponsorship communication</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS SECTION -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">04 — PROJECTS</h2>
+                <p class="section-subtitle">Things I've Built</p>
+
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card dash-card" data-tilt data-tilt-max="3" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="proj-header">
+                            <span class="proj-type featured-badge">PROJECT 01</span>
+                        </div>
+                        <h3>AI-Powered Data Analysis Dashboard</h3>
+                        <p>An intelligent analytics platform capable of anomaly detection, forecasting, automated
+                            reporting, and LLM-generated business insights.</p>
+
+                        <div class="proj-metrics">
+                            <div class="p-metric"><span>10K+</span> Records Processed</div>
+                            <div class="p-metric"><span>70%</span> Reduction in Manual Analysis</div>
+                            <div class="p-metric"><span>8+</span> Interactive Visualizations</div>
+                            <div class="p-metric"><span>Sub-2s</span> Analytics Generation</div>
+                        </div>
+
+                        <div class="proj-pipeline">
+                            <span>DATA</span> → <span>ANALYZE</span> → <span>DETECT ANOMALIES</span> →
+                            <span>FORECAST</span> → <span>GENERATE INSIGHTS</span> → <span>EXPORT REPORT</span>
+                        </div>
+
+                        <div class="proj-include">
+                            <strong>Includes:</strong>
+                            Forecast Charts • Anomaly Heatmaps • AI Insight Generator • Interactive KPI Dashboard
+                        </div>
+
+                        <div class="tech-stack">
+                            <span>Python</span><span>Streamlit</span><span>Plotly</span><span>Prophet</span><span>LangChain</span><span>Gemini</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 2 -->
+                    <div class="project-card dash-card" data-tilt data-tilt-max="3" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="proj-header">
+                            <span class="proj-type">PROJECT 02</span>
+                        </div>
+                        <h3>Wearable Fatigue Detection using CNN-GRU</h3>
+                        <p>Deep learning fatigue detection system using smartwatch sensor data.</p>
+
+                        <div class="proj-metrics">
+                            <div class="p-metric"><span>400K+</span> Sensor Samples</div>
+                            <div class="p-metric"><span>14</span> Subjects</div>
+                            <div class="p-metric"><span>90.2%</span> Accuracy</div>
+                        </div>
+
+                        <div class="proj-pipeline">
+                            <span>FITBIT DATA</span> → <span>PREPROCESS</span> → <span>CNN</span> → <span>GRU</span> →
+                            <span>CLASSIFY</span> → <span>PREDICT</span>
+                        </div>
+
+                        <div class="proj-include">
+                            <strong>Includes:</strong>
+                            Fatigue Meter • Confidence Gauge • Sensor Streams • Prediction Dashboard
+                        </div>
+
+                        <div class="tech-stack">
+                            <span>TensorFlow</span><span>Keras</span><span>Scikit-Learn</span><span>Python</span><span>Gradio</span>
+                        </div>
+                    </div>
+
+                    <!-- Project 3 -->
+                    <div class="project-card dash-card" data-tilt data-tilt-max="3" data-tilt-speed="400"
+                        data-tilt-glare data-tilt-max-glare="0.1">
+                        <div class="proj-header">
+                            <span class="proj-type">PROJECT 03</span>
+                        </div>
+                        <h3>Kidney Disease Prediction System</h3>
+                        <p>Machine learning-powered disease risk assessment platform.</p>
+
+                        <div class="proj-pipeline" style="margin-top: 1rem;">
+                            <span>PATIENT DATA</span> → <span>PREPROCESS</span> → <span>MODEL</span> → <span>RISK
+                                SCORE</span> → <span>EXPLAINABILITY</span>
+                        </div>
+
+                        <div class="proj-include">
+                            <strong>Includes:</strong>
+                            SHAP Graphs • Confusion Matrix • Feature Importance • Risk Simulator
+                        </div>
+
+                        <div class="tech-stack">
+                            <span>Python</span><span>Scikit-Learn</span><span>Pandas</span><span>Streamlit</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- CERTIFICATIONS SECTION -->
+        <section id="certifications" class="section">
+            <div class="container">
+                <h2 class="section-title">05 — VERIFIED CREDENTIALS</h2>
+
+                <div class="cert-grid">
+                    <div class="cert-badge dash-card" data-tilt data-tilt-max="5" data-tilt-glare>
+                        <div class="scan-line"></div>
+                        <div class="cert-issuer">🔧 ServiceNow</div>
+                        <h3>Certified System Administrator</h3>
+                        <p class="cert-date">April 2026</p>
+                        <p class="cert-skills">Platform Administration • Workflow Automation • ITSM</p>
+                    </div>
+
+                    <div class="cert-badge dash-card" data-tilt data-tilt-max="5" data-tilt-glare>
+                        <div class="scan-line"></div>
+                        <div class="cert-issuer">🗄 IBM</div>
+                        <h3>Databases and SQL for Data Science</h3>
+                        <p class="cert-date">October 2024</p>
+                        <p class="cert-skills">SQL • Data Analysis • Database Design</p>
+                    </div>
+
+                    <div class="cert-badge dash-card" data-tilt data-tilt-max="5" data-tilt-glare>
+                        <div class="scan-line"></div>
+                        <div class="cert-issuer">🧮 UC San Diego</div>
+                        <h3>Data Structures</h3>
+                        <p class="cert-date">October 2024</p>
+                        <p class="cert-skills">Algorithms • Complexity Analysis • Data Structures</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">// 06 · CONTACT</h2>
+                <div class="contact-hero">
+                    <div class="ch-line text-white">Let's build</div>
+                    <div class="ch-line grad-blue">something</div>
+                    <div class="ch-line grad-purple">great.</div>
+                </div>
+
+                <div class="contact-content">
+                    <p class="contact-desc">
+                        Open to Data Analyst, Data Engineer & AI roles. Available for internships,<br>
+                        full-time, and meaningful collaborations.
+                    </p>
+
+                    <div class="contact-grid">
+                        <a href="mailto:parthdixit283@gmail.com" class="c-card">
+                            <span class="c-icon">📧</span> <span class="c-text">Email</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/parth-d09110" target="_blank" class="c-card">
+                            <span class="c-icon">💼</span> <span class="c-text">LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/Parth829" target="_blank" class="c-card">
+                            <span class="c-icon">🐙</span> <span class="c-text">GitHub</span>
+                        </a>
+                        <a href="https://codolio.com/profile/imparth" target="_blank" class="c-card">
+                            <span class="c-icon">📊</span> <span class="c-text">Codolio</span>
+                        </a>
+                    </div>
+
+                    <div class="contact-phone">
+                        <span class="c-icon">📞</span> +91 7404799410
+                    </div>
+
+                    <div class="contact-email-box">
+                        <span class="c-prompt">$</span> parthdixit283@gmail.com
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                &copy; 2025 Parth Dixit &middot; Bennett University CSE 2023-2027
+            </div>
+            <div class="footer-right">
+                Bennett University, Greater Noida
+            </div>
+        </div>
+    </footer>
+
+    <!-- Libraries (CDN) -->
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Typed.js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <!-- Vanilla Tilt.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/three-scene.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/chatbot.js"></script>
+
+    <!-- Chatbot UI -->
+    <div class="chatbot-fab" id="chatbot-fab">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+        </svg>
+    </div>
+
+    <div class="chatbot-window" id="chatbot-window">
+        <div class="chat-header">
+            <div class="chat-title">
+                <span class="pulse-dot" style="margin: 0; width: 6px; height: 6px;"></span>
+                AI Assistant
+            </div>
+            <button class="chat-close" id="chat-close">&times;</button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                Hello! I'm Parth's AI assistant. Ask me about his projects, skills, or how to contact him.
+            </div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+            <button id="chat-send">Send</button>
+        </div>
+    </div>
+</body>
+
+</html>
